@@ -18,6 +18,14 @@
 #Requires -Modules AzureAD
 #Requires -Modules PnP.PowerShell
 
+param(
+        [Parameter(Mandatory)][string]$thumbprint,
+        [Parameter(Mandatory)][string]$appID,
+        [Parameter(Mandatory)][string]$tenantID,
+        [Parameter(Mandatory)][string]$tenantURL,
+        [Parameter(Mandatory)][string]$tenant
+    )
+
 # connect to aad
 Connect-AzureAD -CertificateThumbprint $thumbprint -ApplicationId $appId -TenantId $tenantId
 
